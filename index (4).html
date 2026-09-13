@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DavutTech</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080b12;
+    color: white;
+}
+
+/* NAVBAR */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 25px;
+    background: rgba(8,11,18,0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #00d9ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #00d9ff;
+}
+
+/* MENÜ BUTONU */
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+}
+
+/* ANA SAYFA */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 50px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    max-width: 700px;
+}
+
+.hero h1 span {
+    color: #00d9ff;
+}
+
+.hero p {
+    margin-top: 20px;
+    color: #aeb6c4;
+    font-size: 18px;
+    max-width: 550px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    margin: 25px 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.primary {
+    background: #00d9ff;
+    color: #061018;
+}
+
+.secondary {
+    border: 1px solid #333;
+    color: white;
+}
+
+/* BÖLÜMLER */
+
+section {
+    padding: 90px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.title h2 {
+    font-size: 34px;
+}
+
+.title p {
+    margin-top: 10px;
+    color: #8e98a8;
+}
+
+/* KARTLAR */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.card,
+.project,
+.about {
+    background: #111722;
+    border: 1px solid #202938;
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.card p,
+.project p,
+.about {
+    color: #929baa;
+    line-height: 1.6;
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #202938;
+    color: #687386;
+}
+
+/* TELEFON */
+
+@media (max-width: 700px) {
+
+    .menu-btn {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        right: 15px;
+        width: 180px;
+        padding: 20px;
+        background: #111722;
+        border-radius: 12px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        Davut<span>Tech</span>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-links">
+        <a href="#hizmetler" onclick="toggleMenu()">Hizmetler</a>
+        <a href="#projeler" onclick="toggleMenu()">Projeler</a>
+        <a href="#hakkimda" onclick="toggleMenu()">Hakkımda</a>
+        <a href="#iletisim" onclick="toggleMenu()">İletişim</a>
+    </div>
+
+</nav>
+
+<div class="hero">
+
+    <h1>
+        Teknolojiyi <span>fikirlere</span> dönüştürüyorum.
+    </h1>
+
+    <p>
+        Web siteleri, dijital projeler ve geleceğin teknolojileri
+        üzerine kendimi geliştiriyorum.
+    </p>
+
+    <div>
+        <a class="btn primary" href="#projeler">Projelerimi Gör</a>
+        <a class="btn secondary" href="#iletisim">İletişim</a>
+    </div>
+
+</div>
+
+<section id="hizmetler">
+
+    <div class="title">
+        <h2>Ne Yapıyorum?</h2>
+        <p>Dijital dünyada geliştirmek istediğim alanlar.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Web Tasarım</h3>
+            <p>Modern ve telefonlara uyumlu web siteleri geliştiriyorum.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📱</div>
+            <h3>Mobil Uygulama</h3>
+            <p>Android ve iOS uygulamalar geliştirmeyi öğreniyorum.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🤖</div>
+            <h3>Yapay Zekâ</h3>
+            <p>Yapay zekâ ve otomasyon teknolojilerini öğreniyorum.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="projeler">
+
+    <div class="title">
+        <h2>Projelerim</h2>
+        <p>Üzerinde çalıştığım projeler.</p>
+    </div>
+
+    <div class="project">
+        <h3>🌐 DavutTech Web Sitesi</h3>
+        <p>Sıfırdan geliştirdiğim kişisel teknoloji web sitesi.</p>
+    </div>
+
+    <div class="project">
+    <h3>🏗️ İnşaat Firması</h3>
+
+    <p>
+        Kurumsal tanıtım, hizmetler, projeler ve WhatsApp iletişim.
+    </p>
+
+    <a class="btn primary" href="insaat.html">
+        Demo Siteyi Gör →
+    </a>
+</div>
+
+<div class="project">
+    <h3>🍔 Restoran Web Sitesi</h3>
+    <p>
+        Menü, iletişim, konum ve WhatsApp sipariş
+        özelliklerine sahip restoran sitesi.
+    </p>
+</div>
+
+<div class="project">
+    <h3>💈 Berber Web Sitesi</h3>
+    <p>
+        Hizmetler, fiyatlar, çalışma saatleri ve
+        online iletişim özelliklerine sahip berber sitesi.
+    </p>
+</div>
+
+</section>
+
+<section id="hakkimda">
+
+    <div class="title">
+        <h2>Hakkımda</h2>
+    </div>
+
+    <div class="about">
+        Ben Davut. Teknoloji, yazılım ve girişimcilik alanlarına
+        ilgi duyuyorum. Web geliştirmeyi sıfırdan öğreniyorum.
+    </div>
+
+</section>
+
+<section id="iletisim">
+
+    <div class="title">
+        <h2>Bir Projen mi Var?</h2>
+        <p>Benimle iletişime geçebilirsin.</p>
+
+        <a
+            class="btn primary"
+            href="https://wa.me/905015255604"
+            target="_blank">
+            WhatsApp'tan Yaz
+        </a>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 DavutTech
+</footer>
+
+<script>
+
+function toggleMenu() {
+
+    const menu = document.querySelector(".nav-links");
+
+    menu.classList.toggle("active");
+
+}
+
+</script>
+
+</body>
+</html>
